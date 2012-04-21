@@ -11,7 +11,13 @@
   <script type="text/javascript">
     window.setTimeout(function() { 
       document.getElementsByTagName("img")[0].src="augustus-santa.png";
-    }, 2000);
+      window.setTimeout(function() {
+        document.getElementsByTagName("img")[0].src="augustus-glasses.png";
+        window.setTimeout(function() {
+          document.getElementsByTagName("img")[0].src="augustus.png";
+        }, 5000);
+      }, 5000);
+    }, 5000);
   </script>
 </body>
 </html>
