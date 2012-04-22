@@ -3,8 +3,8 @@
 <title>RENDER ONTO CAESAR &mdash; COMING SOON</title>
 </head>
 <body align="center">
-  <img onmouseover="window.img=window.augustus"
-       onmouseout="window.img=window.julius"
+  <img onmouseover="window.active='augustus'"
+       onmouseout="window.active='julius'"
        src="/img/HNI_0004.JPG" />
   <div style="font-size: 2em">
     <marquee direction="right">Coming soon</marquee>
@@ -27,8 +27,9 @@
       "/augustus-santa.png",
       "/augustus-glasses.png",
     ];
-    var imgs = julius;
+    var active = "julius";
     function setImage() {
+      var imgs = window[active];
       var img = imgs[Math.floor( Math.random() * imgs.length )];
       document.getElementsByTagName("img")[0].src = img;
     }
