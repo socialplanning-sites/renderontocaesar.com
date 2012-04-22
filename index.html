@@ -3,27 +3,26 @@
 <title>RENDER ONTO CAESAR &mdash; COMING SOON</title>
 </head>
 <body align="center">
-  <img src="augustus.png" />
+  <img src="/img/HNI_0004.JPG" />
   <div style="font-size: 2em">
     <marquee direction="right">Coming soon</marquee>
     <marquee direction="left">Render Onto Caesar</marquee>
   </div>
   <script type="text/javascript">
-    window.setTimeout(function() { 
-      document.getElementsByTagName("img")[0].src="augustus-santa.png";
-      window.setTimeout(function() {
-        document.getElementsByTagName("img")[0].src="augustus-glasses.png";
-        window.setTimeout(function() {
-          document.getElementsByTagName("img")[0].src="augustus-necklace.png";
-          window.setTimeout(function() {
-            document.getElementsByTagName("img")[0].src="augustus-tattoo.jpg";
-            window.setTimeout(function() {
-              document.getElementsByTagName("img")[0].src="augustus.png";
-              }, 5000);
-            }, 5000);
-        }, 5000);
-      }, 5000);
-    }, 5000);
+    var imgs = [
+      "/img/HNI_0004.JPG",
+      "/img/HNI_0005.JPG",
+      "/img/HNI_0003.JPG",
+      "/img/HNI_0006.JPG",
+      "/img/HNI_0007.JPG",
+      "/img/HNI_0008.JPG",
+      "/img/HNI_0009.JPG",
+    ];
+    function setImage() {
+      var img = imgs[Math.floor( Math.random() * imgs.length )];
+      document.getElementsByTagName("img")[0].src = img;
+    }
+    window.setInterval(setImage, 1000);
   </script>
 </body>
 </html>
