@@ -3,13 +3,15 @@
 <title>RENDER ONTO CAESAR &mdash; COMING SOON</title>
 </head>
 <body align="center">
-  <img src="/img/HNI_0004.JPG" />
+  <img onmouseover="window.img=window.augustus"
+       onmouseout="window.img=window.julius"
+       src="/img/HNI_0004.JPG" />
   <div style="font-size: 2em">
     <marquee direction="right">Coming soon</marquee>
     <marquee direction="left">Render Onto Caesar</marquee>
   </div>
   <script type="text/javascript">
-    var imgs = [
+    var julius = [
       "/img/HNI_0004.JPG",
       "/img/HNI_0005.JPG",
       "/img/HNI_0003.JPG",
@@ -18,6 +20,14 @@
       "/img/HNI_0008.JPG",
       "/img/HNI_0009.JPG",
     ];
+    var augustus = [
+      "/augustus.png",
+      "/augustus-necklace.png",
+      "/augustus-tattoo.png",
+      "/augustus-santa.png",
+      "/augustus-glasses.png",
+    ];
+    var imgs = julius;
     function setImage() {
       var img = imgs[Math.floor( Math.random() * imgs.length )];
       document.getElementsByTagName("img")[0].src = img;
