@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <!-- stylesheet -->
+    <link href="/lib/literally/css/literallycanvas.css" rel="stylesheet">
+
+    <!-- dependency: React.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <!-- Literally Canvas -->
+    <script src="/lib/literally/js/literallycanvas.js"></script>
+  </head>
+  <body>
+    <!-- where the widget goes. you can do CSS to it. -->
+    <div class="literally"></div>
+
+    <!-- kick it off -->
+    <script>
+      // Look ma, no jQuery!
+      newImage = new Image()
+      newImage.onload = function() {      
+        opts = {imageURLPrefix: '/lib/literally/img',
+          imageSize: {width: newImage.width, height: newImage.height}};
+
+        lc = LC.init(
+        document.getElementsByClassName('literally')[0],
+          opts
+        );
+        lc.saveShape(LC.createShape('Image', {x: 0, y: 0, image: newImage}));
+      };
+      newImage.src = '/augustus.png';
+    </script>
+    <style type="text/css">
+      .literally {
+      height: 750px;
+      width: 600px;
+      }
+    </style>
+  </body>
+</html>
