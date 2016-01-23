@@ -12,6 +12,8 @@
   </head>
   <body>
     <!-- where the widget goes. you can do CSS to it. -->
+    <input  type="submit" id="Save" value="Save">
+
     <div class="literally"></div>
 
     <!-- kick it off -->
@@ -29,6 +31,15 @@
         lc.saveShape(LC.createShape('Image', {x: 0, y: 0, image: newImage}));
       };
       newImage.src = '/augustus.png';
+
+      $(window).load(function() {
+      $("#Save").off("click").on("click", function(e) {
+      e.preventDefault();
+      var url = lc.getImage().toDataURL();
+      window.open(url);
+      });
+      
+      });
     </script>
     <style type="text/css">
       .literally {
@@ -36,5 +47,6 @@
       width: 600px;
       }
     </style>
+
   </body>
 </html>
